@@ -213,7 +213,10 @@ body {
 @media (max-width: 768px) {
     .surprise-button {
         padding: 20px 40px;
-        font-size: 22px;
+        font-size: 20px;
+        max-width: 85%;
+        white-space: normal;
+        line-height: 1.4;
     }
 
     .valentine-image {
@@ -228,8 +231,12 @@ body {
 
 @media (max-width: 480px) {
     .surprise-button {
-        padding: 15px 30px;
+        padding: 18px 35px;
         font-size: 18px;
+        max-width: 80%;
+        white-space: normal;
+        line-height: 1.4;
+        word-wrap: break-word;
     }
 
     .valentine-image {
