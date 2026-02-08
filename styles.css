@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    overflow: hidden;
+}
+
+/* Screen Management */
+.screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.screen.active {
+    display: flex;
+}
+
+/* Surprise Screen */
+#surpriseScreen {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.surprise-button {
+    padding: 30px 60px;
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: pulse 2s infinite;
+}
+
+.surprise-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Valentine Screen */
+#valentineScreen {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+}
+
+.hearts-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.heart {
+    position: absolute;
+    font-size: 30px;
+    animation: float-up 4s linear;
+    opacity: 0;
+}
+
+@keyframes float-up {
+    0% {
+        opacity: 1;
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100vh) rotate(360deg);
+    }
+}
+
+.content {
+    text-align: center;
+    z-index: 10;
+    padding: 20px;
+    max-width: 600px;
+    width: 90%;
+}
+
+.valentine-heading {
+    font-size: clamp(28px, 5vw, 48px);
+    color: #d63447;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.image-container {
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.valentine-image {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.message {
+    font-size: clamp(18px, 3vw, 24px);
+    color: #444;
+    margin: 30px 0;
+    font-weight: 500;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 60px;
+}
+
+.response-button {
+    padding: 15px 40px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.yes-button {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    min-width: 120px;
+}
+
+.yes-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.no-button {
+    background: #6c757d;
+    color: white;
+    min-width: 100px;
+}
+
+.no-button:hover {
+    background: #5a6268;
+}
+
+/* Success Screen */
+#successScreen {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    flex-direction: column;
+}
+
+.success-content {
+    text-align: center;
+    z-index: 10;
+    padding: 20px;
+}
+
+.success-heading {
+    font-size: clamp(48px, 8vw, 80px);
+    color: white;
+    margin-bottom: 30px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    animation: bounce 1s ease;
+}
+
+.success-message {
+    font-size: clamp(24px, 4vw, 36px);
+    color: white;
+    margin: 20px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .surprise-button {
+        padding: 20px 40px;
+        font-size: 22px;
+    }
+
+    .valentine-image {
+        max-width: 250px;
+    }
+
+    .response-button {
+        padding: 12px 30px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .surprise-button {
+        padding: 15px 30px;
+        font-size: 18px;
+    }
+
+    .valentine-image {
+        max-width: 200px;
+    }
+
+    .buttons-container {
+        gap: 15px;
+    }
+}
